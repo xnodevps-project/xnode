@@ -1,0 +1,16 @@
+# http://standards.freedesktop.org/desktop-entry-spec/desktop-entry-spec-1.0.html
+
+[Desktop Entry]
+Encoding=UTF-8
+Name=XNODE_Coin Daemon SNAP
+Comment=testnet
+GenericName=XNODE_Coin Digital Currency Daemon Client testnet network
+Exec=xnode_coin-core.daemon-testnet %u
+Terminal=true
+Type=Application
+Icon=${SNAP}/share/pixmaps/xnode_coin_testnet.png
+MimeType=x-scheme-handler/xnode;
+Categories=X-Office;X-Finance;
+Keywords=internet;xnode_coin;zxnode;core;wallet;daemon;testnet;snap;launchpad;crypto;digital;currency;coin;token;zerocoin;
+Version=1.0
+Name[en_IN]=xnoded_testnet.desktop

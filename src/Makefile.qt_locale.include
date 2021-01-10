@@ -1,0 +1,14 @@
+QT_TS = \
+  qt/locale/xnode_de.ts \
+  qt/locale/xnode_en.ts \
+  qt/locale/xnode_en_US.ts \
+  qt/locale/xnode_es.ts \
+  qt/locale/xnode_fr_FR.ts \
+  qt/locale/xnode_hr_HR.ts \
+  qt/locale/xnode_it.ts \
+  qt/locale/xnode_ko_KR.ts \
+  qt/locale/xnode_nl.ts \
+  qt/locale/xnode_pl.ts \
+  qt/locale/xnode_ru.ts \
+  qt/locale/xnode_tr.ts \
+  qt/locale/xnode_zh_CN.ts

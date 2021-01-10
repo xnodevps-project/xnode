@@ -1,0 +1,6 @@
+usr/local/bin/xnode-qt usr/bin
+share/pixmaps/xnode32.xpm usr/share/pixmaps
+share/pixmaps/xnode16.xpm usr/share/pixmaps
+share/pixmaps/xnode128.png usr/share/pixmaps
+debian/xnode-qt.desktop usr/share/applications
+debian/xnode-qt.protocol usr/share/kde4/services/

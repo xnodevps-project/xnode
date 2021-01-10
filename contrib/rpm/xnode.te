@@ -1,0 +1,81 @@
+policy_module(xnode, 1.100.1)
+
+########################################
+#
+# Declarations
+#
+
+type xnode_t;
+type xnode_exec_t;
+init_daemon_domain(xnode_t, xnode_exec_t)
+
+permissive xnode_t;
+
+type xnode_initrc_exec_t;
+init_script_file(xnode_initrc_exec_t)
+
+type xnode_conf_t;
+files_type(xnode_conf_t)
+
+type xnode_var_lib_t;
+files_type(xnode_var_lib_t)
+
+type xnode_var_run_t;
+files_type(xnode_var_run_t)
+
+type xnode_port_t;
+corenet_port(xnode_port_t)
+
+########################################
+#
+# xnode local policy
+#
+allow xnode_t self:process { fork };
+
+allow xnode_t self:fifo_file rw_fifo_file_perms;
+allow xnode_t self:unix_stream_socket create_stream_socket_perms;
+
+manage_dirs_pattern(xnode_t, xnode_conf_t, xnode_conf_t)
+manage_files_pattern(xnode_t, xnode_conf_t, xnode_conf_t)
+
+manage_dirs_pattern(xnode_t, xnode_var_lib_t, xnode_var_lib_t)
+manage_files_pattern(xnode_t, xnode_var_lib_t, xnode_var_lib_t)
+files_var_lib_filetrans(xnode_t, xnode_var_lib_t, { dir file })
+
+manage_dirs_pattern(xnode_t, xnode_var_run_t, xnode_var_run_t)
+manage_files_pattern(xnode_t, xnode_var_run_t, xnode_var_run_t)
+
+sysnet_dns_name_resolve(xnode_t)
+corenet_all_recvfrom_unlabeled(xnode_t)
+
+allow xnode_t self:tcp_socket create_stream_socket_perms;
+corenet_tcp_sendrecv_generic_if(xnode_t)
+corenet_tcp_sendrecv_generic_node(xnode_t)
+corenet_tcp_sendrecv_all_ports(xnode_t)
+corenet_tcp_bind_generic_node(xnode_t)
+
+gen_require(`
+    type xnode_port_t;
+')
+allow xnode_t xnode_port_t:tcp_socket name_bind;
+
+gen_require(`
+    type xnode_port_t;
+')
+allow xnode_t xnode_port_t:tcp_socket name_connect;
+
+domain_use_interactive_fds(xnode_t)
+
+files_read_etc_files(xnode_t)
+
+miscfiles_read_localization(xnode_t)
+
+sysnet_dns_name_resolve(xnode_t)
+
+allow xnode_t xnode_exec_t:file execute_no_trans;
+allow xnode_t self:process setsched;
+corecmd_exec_ls(xnode_t)
+corenet_tcp_connect_http_port(xnode_t)
+dev_read_urand(xnode_t)
+fs_getattr_xattr_fs(xnode_t)
+kernel_read_system_state(xnode_t)

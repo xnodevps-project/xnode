@@ -1,0 +1,12 @@
+[Desktop Entry]
+Version=1.0
+Name=xnode
+Comment=xnode P2P Cryptocurrency
+Exec=xnode-qt %u
+Terminal=false
+Type=Application
+Icon=xnode128
+MimeType=x-scheme-handler/xnode;
+Categories=Office;Finance;
+StartupWMClass=xnode-qt
+Name[en_IN]=xnode-qt.desktop

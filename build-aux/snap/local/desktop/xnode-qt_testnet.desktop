@@ -1,0 +1,16 @@
+# http://standards.freedesktop.org/desktop-entry-spec/desktop-entry-spec-1.0.html
+
+[Desktop Entry]
+Encoding=UTF-8
+Name=XNODE_Coin
+Comment=XNODE_Coin QT test network
+GenericName=XNODE_Coin Digital Currency QT client testnet network
+Exec=xnode_coin-core.qt-testnet %u
+Terminal=false
+Type=Application
+Icon=${SNAP}/share/pixmaps/xnode_coin_testnet.png
+MimeType=x-scheme-handler/xnode;
+Categories=X-Office;X-Finance;
+Keywords=internet;xnode_coin;zxnode;txnode;core;wallet;qt;testnet;snap;launchpad;crypto;digital;currency;coin;token;zerocoin;
+Version=1.0
+Name[en_IN]=xnode-qt_testnet.desktop

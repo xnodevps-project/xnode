@@ -1,0 +1,33 @@
+# /etc/conf.d/xnoded: config file for /etc/init.d/xnoded
+
+# Config file location
+#BITCOIND_CONFIGFILE="/etc/xnode/xnode.conf"
+
+# What directory to write pidfile to?  (created and owned by $BITCOIND_USER)
+#BITCOIND_PIDDIR="/var/run/xnoded"
+
+# What filename to give the pidfile
+#BITCOIND_PIDFILE="${BITCOIND_PIDDIR}/xnoded.pid"
+
+# Where to write xnoded data (be mindful that the blockchain is large)
+#BITCOIND_DATADIR="/var/lib/xnoded"
+
+# User and group to own xnoded process
+#BITCOIND_USER="xnode"
+#BITCOIND_GROUP="xnode"
+
+# Path to xnoded executable
+#BITCOIND_BIN="/usr/bin/xnoded"
+
+# Nice value to run xnoded under
+#BITCOIND_NICE=0
+
+# Additional options (avoid -conf and -datadir, use flags above)
+#BITCOIND_OPTS=""
+
+# The timeout in seconds OpenRC will wait for bitcoind to terminate
+# after a SIGTERM has been raised.
+# Note that this will be mapped as argument to start-stop-daemon's
+# '--retry' option, which means you can specify a retry schedule
+# here. For more information see man 8 start-stop-daemon.
+BITCOIND_SIGTERM_TIMEOUT=60

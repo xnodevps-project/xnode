@@ -1,0 +1,3 @@
+usr/local/bin/xnoded usr/bin
+usr/local/bin/xnode-cli usr/bin
+debian/examples/xnode.conf etc/xnode
