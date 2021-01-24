@@ -61,11 +61,14 @@ static CBlock CreateGenesisBlock(uint32_t nTime, uint32_t nNonce, uint32_t nBits
  * + Contains no strange transactions
  */
 static Checkpoints::MapCheckpoints mapCheckpoints =
-    boost::assign::map_list_of(0, uint256S("0x000004b05215ad8b625ed097e62f0217cfb08c55d2370bb9f0a2745404a04c78")); 
+    boost::assign::map_list_of(0, uint256S("0x000004b05215ad8b625ed097e62f0217cfb08c55d2370bb9f0a2745404a04c78"))
+	(1000, uint256S("0x0000006b43065fdf445f07adca57fe5fd888902cb79c16fa48302cf1c0ab88ce"))
+	(10000, uint256S("0xa2fd284213d913463d827c166ed0220b30de857794956b9dfbaaa5395891ef32"))
+	(20000, uint256S("0x85acbdc4e8b609ddb3584c15f94248cc08d85c337736c12422f3e84a5bc51c4a"));
 
 static const Checkpoints::CCheckpointData data = {
     &mapCheckpoints,
-    1610064000, // * UNIX timestamp of last checkpoint block
+    1611351525, // * UNIX timestamp of last checkpoint block
     0,          // * total number of transactions between genesis and last checkpoint
                 //   (the tx=... number in the SetBestChain debug.log lines)
     2000        // * estimated number of transactions per day after checkpoint
