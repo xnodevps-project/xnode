@@ -379,7 +379,7 @@ void ReadConfigFile(std::map<std::string, std::string>& mapSettingsRet,
                                     "addnode=35.202.56.64:7775\n"
                                     "addnode=104.197.13.204:7775\n"
                                     "addnode=35.224.243.73:7775\n"
-									"addnode=34.70.232.15:7775\n";
+				    "addnode=34.70.232.15:7775\n";
             fwrite(strHeader.c_str(), std::strlen(strHeader.c_str()), 1, configFile);
             fclose(configFile);
             streamConfig.open(GetConfigFile());
